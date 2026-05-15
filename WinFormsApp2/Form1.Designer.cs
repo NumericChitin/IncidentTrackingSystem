@@ -28,12 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            dgvIncidents = new DataGridView();
+            dgvTechnicians = new DataGridView();
+            cboDepartments = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            buttonAddIncident = new Button();
+            buttonAssignTechtoIncident = new Button();
+            buttonMarkAsResolved = new Button();
+            chebOnlyActive = new CheckBox();
+            buttonExportFile = new Button();
+            buttonImportFile = new Button();
+            buttonLoadDatabase = new Button();
+            chebFreeTechnicians = new CheckBox();
+            folderBrowserDialog = new FolderBrowserDialog();
+            textBoxFilterTechByName = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvIncidents).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTechnicians).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvIncidents
+            // 
+            dgvIncidents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIncidents.Location = new Point(12, 42);
+            dgvIncidents.Name = "dgvIncidents";
+            dgvIncidents.Size = new Size(450, 300);
+            dgvIncidents.TabIndex = 0;
+            // 
+            // dgvTechnicians
+            // 
+            dgvTechnicians.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTechnicians.Location = new Point(488, 111);
+            dgvTechnicians.Name = "dgvTechnicians";
+            dgvTechnicians.Size = new Size(420, 231);
+            dgvTechnicians.TabIndex = 1;
+            // 
+            // cboDepartments
+            // 
+            cboDepartments.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboDepartments.Font = new Font("Segoe UI", 14F);
+            cboDepartments.FormattingEnabled = true;
+            cboDepartments.Location = new Point(488, 42);
+            cboDepartments.Name = "cboDepartments";
+            cboDepartments.Size = new Size(420, 33);
+            cboDepartments.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16F);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 30);
+            label1.TabIndex = 3;
+            label1.Text = "Инциденти:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16F);
+            label2.Location = new Point(488, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 30);
+            label2.TabIndex = 4;
+            label2.Text = "Отдел:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 16F);
+            label3.Location = new Point(488, 78);
+            label3.Name = "label3";
+            label3.Size = new Size(104, 30);
+            label3.TabIndex = 5;
+            label3.Text = "Техници:";
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveBorder;
+            label4.Location = new Point(475, 23);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 450);
+            label4.TabIndex = 6;
+            label4.Text = "label4";
+            // 
+            // buttonAddIncident
+            // 
+            buttonAddIncident.Font = new Font("Segoe UI", 14F);
+            buttonAddIncident.Location = new Point(12, 348);
+            buttonAddIncident.Name = "buttonAddIncident";
+            buttonAddIncident.Size = new Size(148, 59);
+            buttonAddIncident.TabIndex = 7;
+            buttonAddIncident.Text = "Регистрирай инцидент";
+            buttonAddIncident.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssignTechtoIncident
+            // 
+            buttonAssignTechtoIncident.Font = new Font("Segoe UI", 14F);
+            buttonAssignTechtoIncident.Location = new Point(164, 348);
+            buttonAssignTechtoIncident.Name = "buttonAssignTechtoIncident";
+            buttonAssignTechtoIncident.Size = new Size(148, 59);
+            buttonAssignTechtoIncident.TabIndex = 8;
+            buttonAssignTechtoIncident.Text = "Задай за решаване";
+            buttonAssignTechtoIncident.UseVisualStyleBackColor = true;
+            // 
+            // buttonMarkAsResolved
+            // 
+            buttonMarkAsResolved.Font = new Font("Segoe UI", 14F);
+            buttonMarkAsResolved.Location = new Point(314, 348);
+            buttonMarkAsResolved.Name = "buttonMarkAsResolved";
+            buttonMarkAsResolved.Size = new Size(148, 59);
+            buttonMarkAsResolved.TabIndex = 9;
+            buttonMarkAsResolved.Text = "Означи като решен";
+            buttonMarkAsResolved.UseVisualStyleBackColor = true;
+            // 
+            // chebOnlyActive
+            // 
+            chebOnlyActive.AutoSize = true;
+            chebOnlyActive.Font = new Font("Segoe UI", 14F);
+            chebOnlyActive.Location = new Point(310, 11);
+            chebOnlyActive.Name = "chebOnlyActive";
+            chebOnlyActive.Size = new Size(152, 29);
+            chebOnlyActive.TabIndex = 10;
+            chebOnlyActive.Text = "Само активни";
+            chebOnlyActive.UseVisualStyleBackColor = true;
+            // 
+            // buttonExportFile
+            // 
+            buttonExportFile.Font = new Font("Segoe UI", 14F);
+            buttonExportFile.Location = new Point(12, 413);
+            buttonExportFile.Name = "buttonExportFile";
+            buttonExportFile.Size = new Size(148, 59);
+            buttonExportFile.TabIndex = 11;
+            buttonExportFile.Text = "Експорт във файл";
+            buttonExportFile.UseVisualStyleBackColor = true;
+            // 
+            // buttonImportFile
+            // 
+            buttonImportFile.Font = new Font("Segoe UI", 14F);
+            buttonImportFile.Location = new Point(164, 413);
+            buttonImportFile.Name = "buttonImportFile";
+            buttonImportFile.Size = new Size(148, 59);
+            buttonImportFile.TabIndex = 12;
+            buttonImportFile.Text = "Импорт от файл";
+            buttonImportFile.UseVisualStyleBackColor = true;
+            // 
+            // buttonLoadDatabase
+            // 
+            buttonLoadDatabase.Font = new Font("Segoe UI", 14F);
+            buttonLoadDatabase.Location = new Point(314, 413);
+            buttonLoadDatabase.Name = "buttonLoadDatabase";
+            buttonLoadDatabase.Size = new Size(148, 59);
+            buttonLoadDatabase.TabIndex = 13;
+            buttonLoadDatabase.Text = "Зареди от база данни";
+            buttonLoadDatabase.UseVisualStyleBackColor = true;
+            // 
+            // chebFreeTechnicians
+            // 
+            chebFreeTechnicians.AutoSize = true;
+            chebFreeTechnicians.Font = new Font("Segoe UI", 14F);
+            chebFreeTechnicians.Location = new Point(742, 81);
+            chebFreeTechnicians.Name = "chebFreeTechnicians";
+            chebFreeTechnicians.Size = new Size(166, 29);
+            chebFreeTechnicians.TabIndex = 14;
+            chebFreeTechnicians.Text = "Само свободни";
+            chebFreeTechnicians.UseVisualStyleBackColor = true;
+            // 
+            // textBoxFilterTechByName
+            // 
+            textBoxFilterTechByName.Font = new Font("Segoe UI", 14F);
+            textBoxFilterTechByName.Location = new Point(708, 348);
+            textBoxFilterTechByName.Name = "textBoxFilterTechByName";
+            textBoxFilterTechByName.Size = new Size(200, 32);
+            textBoxFilterTechByName.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.Location = new Point(489, 354);
+            label5.Name = "label5";
+            label5.Size = new Size(161, 21);
+            label5.TabIndex = 16;
+            label5.Text = "Търси техник по име:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.Location = new Point(489, 402);
+            label6.Name = "label6";
+            label6.Size = new Size(191, 21);
+            label6.TabIndex = 17;
+            label6.Text = "Най-ползотворен техник:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F);
+            label7.Location = new Point(489, 447);
+            label7.Name = "label7";
+            label7.Size = new Size(181, 21);
+            label7.TabIndex = 18;
+            label7.Text = "Най-безполезен техник:";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 14F);
+            textBox1.Location = new Point(708, 396);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(200, 32);
+            textBox1.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Segoe UI", 14F);
+            textBox2.Location = new Point(708, 441);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(200, 32);
+            textBox2.TabIndex = 20;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(920, 493);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(textBoxFilterTechByName);
+            Controls.Add(chebFreeTechnicians);
+            Controls.Add(buttonLoadDatabase);
+            Controls.Add(buttonImportFile);
+            Controls.Add(buttonExportFile);
+            Controls.Add(chebOnlyActive);
+            Controls.Add(buttonMarkAsResolved);
+            Controls.Add(buttonAssignTechtoIncident);
+            Controls.Add(buttonAddIncident);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(cboDepartments);
+            Controls.Add(dgvTechnicians);
+            Controls.Add(dgvIncidents);
+            Name = "Form1";
+            Text = "Система за управление на инциденти 1.0";
+            ((System.ComponentModel.ISupportInitialize)dgvIncidents).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTechnicians).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dgvIncidents;
+        private DataGridView dgvTechnicians;
+        private ComboBox cboDepartments;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button buttonAddIncident;
+        private Button buttonAssignTechtoIncident;
+        private Button buttonMarkAsResolved;
+        private CheckBox chebOnlyActive;
+        private Button buttonExportFile;
+        private Button buttonImportFile;
+        private Button buttonLoadDatabase;
+        private CheckBox chebFreeTechnicians;
+        private FolderBrowserDialog folderBrowserDialog;
+        private TextBox textBoxFilterTechByName;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
