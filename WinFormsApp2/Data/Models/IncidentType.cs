@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinFormsApp2.Data.Models
+namespace WinFormsApp2.Data.Models;
+
+public partial class IncidentType
 {
-    public class IncidentType
-    {
-        public int ID { get; set; }
-        public string Type { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Type { get; set; } = null!;
+
+    public virtual ICollection<Incident> Incidents { get; set; } = new List<Incident>();
+
+    public virtual ICollection<Technician> Technicians { get; set; } = new List<Technician>();
 }

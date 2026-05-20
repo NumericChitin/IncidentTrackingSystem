@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinFormsApp2.Data.Models
+namespace WinFormsApp2.Data.Models;
+
+public partial class DepartmentTechnician
 {
-    public class DepartmentTechnician
-    {
-        public int ID { get; set; }
-        public int TechnicianID { get; set; }
-        public int DepartmentID { get; set; }
-    }
+    public int Id { get; set; }
+
+    public int TechnicianId { get; set; }
+
+    public int DepartmentId { get; set; }
+
+    public virtual Department Department { get; set; } = null!;
+
+    public virtual Technician Technician { get; set; } = null!;
 }

@@ -13,7 +13,7 @@ namespace WinFormsApp2.Services
 
         public void LogEvent(object sender, IncidentEventArgs e)
         {
-            string logEntry = $"[{e.Timestamp}] EVENT: {e.Message} (Incident ID: {e.Incident.ID})";
+            string logEntry = $"[{e.Timestamp}] EVENT: {e.Message} (Incident ID: {e.Incident.Id})";
 
             // В реална среда тук ще записвате във файл:
             // File.AppendAllLines(_filePath, new[] { logEntry });

@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinFormsApp2.Data.Models
+namespace WinFormsApp2.Data.Models;
+
+public partial class Technician
 {
-    public class Technician
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public int? TypeSpecialised { get; set; } // Nullable според схемата
-    }
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public int? TypeSpecialised { get; set; }
+
+    public virtual ICollection<DepartmentTechnician> DepartmentTechnicians { get; set; } = new List<DepartmentTechnician>();
+
+    public virtual IncidentType? TypeSpecialisedNavigation { get; set; }
 }

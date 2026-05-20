@@ -35,7 +35,7 @@ namespace WinFormsApp2.Logic
 
         public void ResolveIncident(Incident incident)
         {
-            incident.DateResolved = DateTime.Now;
+            incident.DateResolved = DateOnly.FromDateTime(DateTime.Now);
             OnIncidentResolved(new IncidentEventArgs(incident, $"Инцидентът '{incident.Name}' е успешно разрешен."));
         }
 

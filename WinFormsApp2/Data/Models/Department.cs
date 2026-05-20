@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinFormsApp2.Data.Models
+namespace WinFormsApp2.Data.Models;
+
+public partial class Department
 {
-    public class Department
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public virtual ICollection<DepartmentTechnician> DepartmentTechnicians { get; set; } = new List<DepartmentTechnician>();
 }
