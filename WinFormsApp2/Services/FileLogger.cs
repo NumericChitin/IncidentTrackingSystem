@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WinFormsApp2.EventArgsClasses;
+using System.IO;
 
-namespace WinFormsApp2.Services
+namespace WinFormsApp2
 {
     public class FileLogger
     {
-        private string _filePath = "log.txt";
+        private readonly string _filePath = "incidents_log.txt";
 
-        public void LogEvent(object sender, IncidentEventArgs e)
+        public void LogEvent(object? sender, IncidentEventArgs e)
         {
-            string logEntry = $"[{e.Timestamp}] EVENT: {e.Message} (Incident ID: {e.Incident.Id})";
-
-            // В реална среда тук ще записвате във файл:
-            // File.AppendAllLines(_filePath, new[] { logEntry });
-
-            Console.WriteLine($"[FileLogger]: {logEntry}");
+            try
+            {
+                string logEntry = $"[{e.Timestamp:yyyy-MM-dd HH:mm:ss}] {e.Message}";
+                File.AppendAllText(_filePath, logEntry + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                // Заглушаваме грешката, за да не срине UI-а, ако файлът е заключен
+                System.Diagnostics.Debug.WriteLine($"Грешка при запис в лог файла: {ex.Message}");
+            }
         }
     }
 }

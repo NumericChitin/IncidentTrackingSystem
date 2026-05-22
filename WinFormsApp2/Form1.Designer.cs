@@ -50,6 +50,7 @@
             label7 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            chebCritical = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvIncidents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTechnicians).BeginInit();
             SuspendLayout();
@@ -134,6 +135,7 @@
             buttonAddIncident.TabIndex = 7;
             buttonAddIncident.Text = "Регистрирай инцидент";
             buttonAddIncident.UseVisualStyleBackColor = true;
+            buttonAddIncident.Click += buttonAddIncident_Click;
             // 
             // buttonAssignTechtoIncident
             // 
@@ -145,6 +147,7 @@
             buttonAssignTechtoIncident.TabIndex = 8;
             buttonAssignTechtoIncident.Text = "Задай за решаване";
             buttonAssignTechtoIncident.UseVisualStyleBackColor = true;
+            buttonAssignTechtoIncident.Click += buttonAssignTechtoIncident_Click;
             // 
             // buttonMarkAsResolved
             // 
@@ -156,6 +159,7 @@
             buttonMarkAsResolved.TabIndex = 9;
             buttonMarkAsResolved.Text = "Означи като решен";
             buttonMarkAsResolved.UseVisualStyleBackColor = true;
+            buttonMarkAsResolved.Click += buttonMarkAsResolved_Click;
             // 
             // chebOnlyActive
             // 
@@ -179,6 +183,7 @@
             buttonExportFile.TabIndex = 11;
             buttonExportFile.Text = "Експорт във файл";
             buttonExportFile.UseVisualStyleBackColor = true;
+            buttonExportFile.Click += buttonExportFile_Click;
             // 
             // buttonImportFile
             // 
@@ -190,6 +195,7 @@
             buttonImportFile.TabIndex = 12;
             buttonImportFile.Text = "Импорт от файл";
             buttonImportFile.UseVisualStyleBackColor = true;
+            buttonImportFile.Click += buttonImportFile_Click;
             // 
             // buttonLoadDatabase
             // 
@@ -201,6 +207,7 @@
             buttonLoadDatabase.TabIndex = 13;
             buttonLoadDatabase.Text = "Зареди от база данни";
             buttonLoadDatabase.UseVisualStyleBackColor = true;
+            buttonLoadDatabase.Click += buttonLoadDatabase_Click;
             // 
             // chebFreeTechnicians
             // 
@@ -236,49 +243,60 @@
             // 
             // label6
             // 
-            label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(559, 536);
+            label6.Location = new Point(559, 510);
             label6.Name = "label6";
-            label6.Size = new Size(247, 28);
+            label6.Size = new Size(183, 60);
             label6.TabIndex = 17;
-            label6.Text = "Най-ползотворен техник:";
+            label6.Text = "Най-ползотворен техник днес:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F);
-            label7.Location = new Point(559, 596);
+            label7.Location = new Point(559, 570);
             label7.Name = "label7";
-            label7.Size = new Size(233, 28);
+            label7.Size = new Size(183, 60);
             label7.TabIndex = 18;
-            label7.Text = "Най-безполезен техник:";
+            label7.Text = "Най-безполезен техник днес:";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 14F);
-            textBox1.Location = new Point(809, 528);
+            textBox1.Location = new Point(748, 528);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(228, 39);
+            textBox1.Size = new Size(289, 39);
             textBox1.TabIndex = 19;
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 14F);
-            textBox2.Location = new Point(809, 588);
+            textBox2.Location = new Point(748, 588);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(228, 39);
+            textBox2.Size = new Size(289, 39);
             textBox2.TabIndex = 20;
+            // 
+            // chebCritical
+            // 
+            chebCritical.AutoSize = true;
+            chebCritical.Font = new Font("Segoe UI", 14F);
+            chebCritical.Location = new Point(204, 15);
+            chebCritical.Margin = new Padding(3, 4, 3, 4);
+            chebCritical.Name = "chebCritical";
+            chebCritical.Size = new Size(144, 36);
+            chebCritical.TabIndex = 21;
+            chebCritical.Text = "Критични";
+            chebCritical.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1051, 657);
+            Controls.Add(chebCritical);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label7);
@@ -303,6 +321,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Система за управление на инциденти 1.0";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvIncidents).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTechnicians).EndInit();
             ResumeLayout(false);
@@ -333,5 +352,6 @@
         private Label label7;
         private TextBox textBox1;
         private TextBox textBox2;
+        private CheckBox chebCritical;
     }
 }

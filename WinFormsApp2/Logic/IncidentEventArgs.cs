@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinFormsApp2.Data.Models;
 
-namespace WinFormsApp2.EventArgsClasses
+namespace WinFormsApp2
 {
     public class IncidentEventArgs : EventArgs
     {

@@ -1,7 +1,5 @@
 ﻿using System;
 using WinFormsApp2.Data.Models;
-using WinFormsApp2.Logic;
-using WinFormsApp2.Services;
 
 namespace WinFormsApp2
 {
